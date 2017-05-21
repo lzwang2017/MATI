@@ -5,12 +5,12 @@
     <script src="math.js" type="text/javascript"></script>
     <script src="fixeddata.js" type="text/javascript"></script>
     <meta charset="UTF-8">
-    <title>Trait Introgression</title>
+    <title>Fixed PCV</title>
     <script type="application/javascript">
-        var colorA = "#ffff00"; //1
-        var colorB = "#8888ff"; //0
-        var colorC = "#000000"; //text
-        var colorH = "#ffff00"; //highlight
+        var colorA = "#ffff00";
+        var colorB = "#8888ff";
+        var colorC = "#000000" ;
+        var colorH = "#8888ff";
         var w = window.innerWidth;
         var h = window.innerHeight;
 
@@ -204,6 +204,11 @@
                             var Index_1 = Selected_Parents_Index[1] ;
                             L2[0] = Data[2*Index_1] ;
                             L2[1] = Data[2*Index_1+1] ;
+                            var r = numeric.rep([1, n-1], 0);
+                            for (var i = 0; i<n-1; i++)
+                            {
+                                r[i] = (i+1)%2?0.1:0.2;
+                            }
                             var NewRawData = performCrossOperation(L1, L2, r, k) ;
                             var NewRawH    = getH(NewRawData);
                             var SortedIndex_NewRawH = sortWithIndex(NewRawH) ;
