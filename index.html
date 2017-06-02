@@ -878,6 +878,15 @@
                 }
 
             }
+            for (var j = 0; j<n; j++)
+            {
+              Offspring[0][j] = 1;
+              Offspring[1][j] = 1;
+            }
+            Offspring[0][2] = 0;
+            Offspring[0][6] = 0;
+            Offspring[1][2] = 0;
+            Offspring[1][6] = 0;
             return Offspring ;
         }
         function cumsum(Array_In)
